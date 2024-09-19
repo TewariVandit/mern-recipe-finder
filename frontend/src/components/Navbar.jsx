@@ -35,11 +35,9 @@ const Navbar = ({ isAuthenticated }) => {
 
       <div className="flex justify-between items-center px-5 py-3 bg-[#F2F9E5] shadow-md">
         {/* Logo Section */}]
-        <Link to="/" onClick={handleLinkClick}>
-          <div className="flex items-center">
-            <img src="logo.png" className="h-17 w-20" alt="logo" />
-          </div>
-        </Link>
+        <div className="flex items-center">
+          <img src="logo.png" className="h-17 w-20" alt="logo" />
+        </div>
 
         {/* Hamburger Menu for Mobile */}
         <button className="md:hidden px-2 py-1" onClick={handleMobileMenuToggle}>
