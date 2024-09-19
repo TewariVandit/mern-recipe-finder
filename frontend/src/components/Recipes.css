@@ -1,0 +1,122 @@
+.recipes-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.filter-section {
+    width: 25%;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.cards-section {
+    width: 75%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.recipe-card {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+.filter-section {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.filter-section h3 {
+    margin-top: 10px;
+}
+
+.cards-section {
+    display: flex;
+    flex-direction: column;
+}
+.cards-section {
+    padding: 20px; /* Optional padding around the cards section */
+}
+
+.recipe-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    gap: 16px; /* Space between cards */
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+}
+
+.loading-spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: Light background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Ensure it's on top of other content */
+}
+
+.spinner {
+    border: 8px solid #f3f3f3; /* Light gray */
+    border-top: 8px solid #4CAF50; /* Green */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.recipe-card {
+    flex: 1 1 calc(33.333% - 16px); /* 3 cards per row minus gaps */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+@media (max-width: 1000px) {
+    .recipe-card {
+        flex: 1 1 calc(50% - 16px); /* 2 cards per row on smaller devices */
+    }
+}
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 800px) {
+    .recipes-container {
+        flex-direction: column;
+    }
+
+    .filter-section {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .cards-section {
+        width: 100%;
+    }
+}
+@media (max-width: 550px) {
+    .recipe-card {
+        flex: 1 1 100%; /* 1 card per row on very small devices */
+    }
+}

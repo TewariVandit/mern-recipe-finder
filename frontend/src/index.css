@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --primary-green: #4caf50; /* Use for headers, primary buttons, and important highlights */
+  --dark-green: #388e3c; /* Use for borders, hover effects, and call-to-action buttons */
+  --light-green: #c8e6c9; /* Use for background sections, cards, or lighter areas */
+  --accent-yellow: #ffeb3b; /* Use sparingly for accent elements like dividers or secondary buttons */
+
+  /* Neutrals */
+  --white: #ffffff; /* Use for main background and text areas */
+  --black: #000000; /* Use for dark text or deep contrasts if needed */
+
+  /* Typography */
+  --text-primary: #388e3c; /* Primary text color, especially for headings */
+  --text-secondary: #4caf50; /* Secondary text color for subheadings or links */
+  --text-light: #ffffff; /* Light text color for elements like buttons on dark backgrounds */
+
+  /* Shadows */
+  --box-shadow-light: rgba(
+    0,
+    0,
+    0,
+    0.1
+  ); /* Use for soft shadows around cards or sections */
+  --box-shadow-dark: rgba(
+    0,
+    0,
+    0,
+    0.3
+  ); /* Use for hover states on buttons or cards */
+}
+
+/* Example Usage */
+
+/* Body Styling */
+body {
+  font-family: "Poppins", sans-serif; /* Recommended modern font */
+}
+
+/* Header Styling */
+header {
+  background-color: var(--primary-green); /* Main header background */
+  color: var(
+    --text-light
+  ); /* Text inside header should be white for contrast */
+}
+
+/* Button Styling */
+button {
+  background-color: var(--dark-green); /* Primary button background */
+  color: var(--text-light); /* Button text should be white */
+  border: none;
+  box-shadow: 0 2px 5px var(--box-shadow-dark); /* Dark shadow for depth */
+}
+
+button:hover {
+  background-color: var(--primary-green); /* Hover effect for buttons */
+}
+
+/* Section Background */
+.section {
+  background-color: var(
+    --light-green
+  ); /* Soft green background for section blocks */
+  padding: 20px;
+  box-shadow: 0 4px 10px var(--box-shadow-light); /* Soft shadow for sections */
+}
+
+/* Accent Elements */
+.accent {
+  color: var(--accent-yellow); /* Use this for accent texts or borders */
+}
+
+/* Links Styling */
+a {
+  color: var(--text-secondary); /* Links with the secondary green color */
+}
+
+a:hover {
+  color: var(--primary-green); /* Link hover effect */
+}
+
+@media (max-width: 880px) {
+  .recipe-detail-container {
+      flex-direction: column;
+  }
+  .recipe-detail-container .w-full {
+      width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 580px) {
+  .de {
+    margin-top: -20vh;
+  }
+  .sd {
+    flex-direction: column;
+    align-items: center;
+  }
+  .sd div:nth-child(2) {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .de {
+    margin-top: -30vh;
+    width: 90vw;
+    height: 60vh;
+  }
+  .sda{
+    flex-direction: column;
+  }
+  .sda div{
+    width: 100%;
+  }
+}

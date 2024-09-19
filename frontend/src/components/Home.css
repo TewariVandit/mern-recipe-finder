@@ -1,0 +1,97 @@
+.home-container {
+  text-align: center;
+  padding: 20px;
+  background: url("your-background-image-url") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 buttons per row */
+  gap: 20px; /* Space between buttons */
+  max-width: 600px; /* Maximum width of the grid */
+  width: 100%; /* Make it responsive */
+}
+
+.recipe-button {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Slightly transparent background */
+  border: none;
+  border-radius: 12px;
+  padding: 30px; /* Increased padding for height */
+  font-size: 24px; /* Larger font size */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  height: 120px; /* Fixed height for buttons */
+  background-size: cover; /* Ensure background covers the button */
+  color: #333; /* Text color */
+}
+
+.recipe-button.vegetable {
+  background-image: url("https://i.ytimg.com/vi/ln8jTsjjJEY/maxresdefault.jpg"); /* Replace with actual image URL */
+}
+
+.recipe-button.chapati {
+  background-image: url("https://static.toiimg.com/thumb/61203720.cms?width=1200&height=900"); /* Replace with actual image URL */
+}
+
+.recipe-button.sweet {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST9TGUNXz19IDQ30cpJ61opQw8JBNdWf9ctA&s"); /* Replace with actual image URL */
+}
+
+.recipe-button.fast-food {
+  background-image: url("https://img.freepik.com/free-photo/delicious-burger-with-fresh-ingredients_23-2150857908.jpg"); /* Replace with actual image URL */
+}
+
+/* Optional: If you want a hover effect, uncomment this */
+.recipe-button:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+.bg-breakfast {
+  background-image: url("https://www.kateskitchenkc.com/wp-content/uploads/2022/12/breakfast-served-with-coffee-juice-egg-and-rolls.jpg_s1024x1024wisk20c81oJyNsUEkDZzX8Qf4kEuj3pnxPHHA5MLVeRzPEr-vQ.jpg");
+  background-size: cover;
+}
+
+.bg-lunch {
+  background-image: url("https://5.imimg.com/data5/SELLER/Default/2022/6/ZP/TZ/IK/144143379/lunch-food-services-500x500.jpg");
+  background-size: cover;
+}
+
+.bg-dinner {
+  background-image: url("https://images.immediate.co.uk/production/volatile/sites/2/2020/02/OLI-0320_Healthy-CuminCrustedChickenBreastWithKaleSaladHumous_02786_preview-eba91c9.jpg?quality=90&resize=556,505");
+  background-size: cover;
+}
+
+.recipe-button {
+  position: relative; /* Ensure child elements are positioned relative to the button */
+  overflow: hidden; /* Prevents background from spilling out */
+}
+
+.bg-veg {
+    background-image: url('https://images.immediate.co.uk/production/volatile/sites/30/2020/08/fruit_and_veg-fcb7b38.jpg');
+    background-size: cover;
+  }
+  
+  .bg-nonveg {
+    background-image: url('https://t3.ftcdn.net/jpg/06/48/92/52/360_F_648925212_QYHo0OCN9Va3UvfWOEtpHM43A6lE1lSV.jpg');
+    background-size: cover;
+  }
+  
+  .home-container {
+    width: 80%; /* Set the width of the main container */
+    margin: 0 auto; /* Center the container */
+  }
+  
+  .h-35vh {
+    height: 35vh; /* Set the height for the buttons */
+  }
+  
