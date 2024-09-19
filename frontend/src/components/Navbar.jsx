@@ -34,10 +34,12 @@ const Navbar = ({ isAuthenticated }) => {
       )}
 
       <div className="flex justify-between items-center px-5 py-3 bg-[#F2F9E5] shadow-md">
-        {/* Logo Section */}
-        <div className="flex items-center">
-          <img src="logo.png" className="h-17 w-20" alt="logo" />
-        </div>
+        {/* Logo Section */}]
+        <Link to="/" onClick={handleLinkClick}>
+          <div className="flex items-center">
+            <img src="logo.png" className="h-17 w-20" alt="logo" />
+          </div>
+        </Link>
 
         {/* Hamburger Menu for Mobile */}
         <button className="md:hidden px-2 py-1" onClick={handleMobileMenuToggle}>
@@ -49,7 +51,7 @@ const Navbar = ({ isAuthenticated }) => {
           <li className={`hover:text-[#74B72E] transition-colors duration-300 ease-in-out ${location.pathname === '/' ? 'text-[#4F8A10] font-bold border-b-2 border-[#74B72E]' : ''}`}>
             <Link to="/" onClick={handleLinkClick}>Home</Link>
           </li>
-         
+
           <li className={`hover:text-[#74B72E] transition-colors duration-300 ease-in-out ${location.pathname === '/recipes' ? 'text-[#4F8A10] font-bold border-b-2 border-[#74B72E]' : ''}`}>
             <Link to="/recipes" onClick={handleLinkClick}>Recipes</Link>
           </li>
@@ -82,7 +84,7 @@ const Navbar = ({ isAuthenticated }) => {
           <li className={`hover:text-[#74B72E] transition-colors duration-300 ease-in-out ${location.pathname === '/' ? 'text-[#4F8A10] font-bold border-b-2 border-[#74B72E]' : ''}`}>
             <Link to="/" onClick={handleLinkClick}>Home</Link>
           </li>
-        
+
           <li className={`hover:text-[#74B72E] transition-colors duration-300 ease-in-out ${location.pathname === '/recipes' ? 'text-[#4F8A10] font-bold border-b-2 border-[#74B72E]' : ''}`}>
             <Link to="/recipes" onClick={handleLinkClick}>Recipes</Link>
           </li>
