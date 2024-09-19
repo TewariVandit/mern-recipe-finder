@@ -6,7 +6,7 @@ import { closeSearchModal } from './redux/modal-slice';
 import './index.css';
 import Home from './components/Home';
 import Login from './components/Login';
-import Signup from './components/Signup';
+import Signup from './components/SignUp';
 import About from './components/About';
 import Recipes from './components/Recipes';
 import AddRecipe from './components/AddRecipe';
