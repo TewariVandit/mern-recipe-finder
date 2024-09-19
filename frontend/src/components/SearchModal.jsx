@@ -20,7 +20,7 @@ const SearchModal = ({ isOpen, onClose }) => {
   // Fetch ingredients from the API
   const fetchIngredients = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/v1/recipe/ingredients');
+      const response = await axios.get('https://mern-recipe-finder.onrender.com/api/v1/recipe/ingredients');
       // Filter out empty values from the response
       const filteredData = {};
       for (const key in response.data) {

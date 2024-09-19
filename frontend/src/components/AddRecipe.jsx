@@ -102,7 +102,7 @@ const AddRecipe = () => {
     formData.append('createdBy', userId);
 
     try {
-      const response = await axios.post('http://localhost:8000/api/v1/recipe/add', formData, {
+      const response = await axios.post('https://mern-recipe-finder.onrender.com/api/v1/recipe/add', formData, {
         withCredentials: true,
         headers: {
           'Content-Type': 'multipart/form-data',

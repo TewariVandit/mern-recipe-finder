@@ -20,7 +20,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/api/v1/user/add', formData);
+      const response = await axios.post('https://mern-recipe-finder.onrender.com/api/v1/user/add', formData);
       if (response.data.success) {
         navigate('/login'); // Navigate to login after successful signup
       } else {

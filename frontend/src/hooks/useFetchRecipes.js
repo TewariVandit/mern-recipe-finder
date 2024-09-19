@@ -10,7 +10,7 @@ const useFetchRecipes = (ingredients) => {
         const fetchRecipes = async () => {
             if (ingredients) {
                 try {
-                    const response = await axios.post('http://localhost:8000/api/v1/recipe/search', { selectedIngredients: ingredients });
+                    const response = await axios.post('https://mern-recipe-finder.onrender.com/api/v1/recipe/search', { selectedIngredients: ingredients });
                     if (response.data.matchedRecipes) {
                         dispatch(setRecipes(response.data.matchedRecipes));
                     }

@@ -12,12 +12,12 @@ const RecipeDetail = () => {
     useEffect(() => {
         const fetchRecipe = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/api/v1/recipe/recipes/${id}`);
+                const response = await axios.get(`https://mern-recipe-finder.onrender.com/api/v1/recipe/recipes/${id}`);
                 setRecipe(response.data);
 
                 // Now use response.data to fetch creator details
                 if (response.data && response.data.createdBy) {
-                    const creatorResponse = await axios.get(`http://localhost:8000/api/v1/user/${response.data.createdBy}`);
+                    const creatorResponse = await axios.get(`https://mern-recipe-finder.onrender.com/api/v1/user/${response.data.createdBy}`);
                     setCreator(creatorResponse.data);
                 }
             } catch (err) {

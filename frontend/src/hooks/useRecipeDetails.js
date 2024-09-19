@@ -10,7 +10,7 @@ const useRecipeDetails = (recipeId) => {
         const fetchRecipeDetails = async () => {
             if (recipeId) {
                 try {
-                    const response = await axios.get(`http://localhost:8000/api/v1/recipe/${recipeId}`);
+                    const response = await axios.get(`https://mern-recipe-finder.onrender.com/api/v1/recipe/${recipeId}`);
                     if (response.data) {
                         dispatch(setRecipeDetails(response.data));
                     }

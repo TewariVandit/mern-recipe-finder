@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // For form data
 
 // CORS Options
 const corsOptions = {
-    origin: 'http://localhost:5173',
+    origin: process.env.URL,
     credentials: true // Crucial for cookie sending and receiving
 };
 app.use(cors(corsOptions));

@@ -14,7 +14,7 @@ const Profile = () => {
     const handleLogout = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.post('http://localhost:8000/api/v1/user/logout', {}, {
+            const response = await axios.post('https://mern-recipe-finder.onrender.com/api/v1/user/logout', {}, {
                 headers: { 'Authorization': `Bearer ${token}` },
             });
 
@@ -32,7 +32,7 @@ const Profile = () => {
 
     const fetchRecipes = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/api/v1/recipe'); // Update the URL if necessary
+            const response = await axios.get('https://mern-recipe-finder.onrender.com/api/v1/recipe'); // Update the URL if necessary
             if (response.data.success) {
                 setRecipes(response.data.recipes); // Assuming the response contains a 'recipes' array
             } else {

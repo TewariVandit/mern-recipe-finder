@@ -34,7 +34,7 @@ const EditRecipe = () => {
     useEffect(() => {
         const fetchRecipe = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/api/v1/recipe/${id}`);
+                const response = await fetch(`https://mern-recipe-finder.onrender.com/api/v1/recipe/${id}`);
                 
                 if (!response.ok) {
                     throw new Error(`Error: ${response.status} ${response.statusText}`);
@@ -120,7 +120,7 @@ const EditRecipe = () => {
         }
 
         try {
-            const response = await fetch(`http://localhost:8000/api/v1/recipe/update/${id}`, {
+            const response = await fetch(`https://mern-recipe-finder.onrender.com/api/v1/recipe/update/${id}`, {
                 method: 'PUT',
                 body: formData,
             });

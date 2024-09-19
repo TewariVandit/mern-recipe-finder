@@ -37,7 +37,7 @@ const Recipes = () => {
             }
 
             console.log(query.toString());
-            const response = await axios.get(`http://localhost:8000/api/v1/recipe/filter?${query.toString()}`);
+            const response = await axios.get(`https://mern-recipe-finder.onrender.com/api/v1/recipe/filter?${query.toString()}`);
             setRecipes(response.data.recipes || []);
         } catch (err) {
             console.error('Error fetching filtered recipes:', err);

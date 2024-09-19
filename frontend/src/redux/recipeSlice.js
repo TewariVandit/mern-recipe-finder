@@ -13,7 +13,7 @@ const initialState = {
 export const fetchAllRecipes = createAsyncThunk(
     'recipes/fetchAll',
     async () => {
-        const response = await axios.get('http://localhost:8000/api/v1/recipe/recipes');
+        const response = await axios.get('https://mern-recipe-finder.onrender.com/api/v1/recipe/recipes');
         return response.data.recipes; // Assuming the API returns an object with a "recipes" property
     }
 );
