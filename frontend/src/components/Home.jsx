@@ -41,6 +41,14 @@ const Home = () => {
     navigate('/recipes', { state: { filter: { recipeType } } });
   };
 
+  const navigateTomealTime = (mealTime) => {
+    navigate('/recipes', { state: { filter: { mealTime } } });
+  };
+
+  const navigateTofoodType = (foodType) => {
+    navigate('/recipes', { state: { filter: { foodType } } });
+  };
+
   return (
     <>
       <SimpleSlider />
@@ -87,7 +95,7 @@ const Home = () => {
         </h2>
         <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
           <button
-            onClick={() => navigateToRecipes('breakfast')}
+            onClick={() => navigateTomealTime('breakfast')}
             className="recipe-button bg-blue-500 text-white rounded-lg w-full md:w-48 h-24 flex items-center justify-center shadow-lg relative"
           >
             <div className="icon" />
@@ -95,7 +103,7 @@ const Home = () => {
             <div className="bg-breakfast h-full w-full absolute inset-0 rounded-lg opacity-30"></div>
           </button>
           <button
-            onClick={() => navigateToRecipes('lunch')}
+            onClick={() => navigateTomealTime('lunch')}
             className="recipe-button bg-yellow-500 text-white rounded-lg w-full md:w-48 h-24 flex items-center justify-center shadow-lg relative"
           >
             <div className="icon" />
@@ -103,7 +111,7 @@ const Home = () => {
             <div className="bg-lunch h-full w-full absolute inset-0 rounded-lg opacity-30"></div>
           </button>
           <button
-            onClick={() => navigateToRecipes('dinner')}
+            onClick={() => navigateTomealTime('dinner')}
             className="recipe-button bg-purple-500 text-white rounded-lg w-full md:w-48 h-24 flex items-center justify-center shadow-lg relative"
           >
             <div className="icon" />
@@ -121,7 +129,7 @@ const Home = () => {
         <div className="flex justify-center space-x-6">
           <div className="flex flex-col items-center w-1/2 h-35vh">
             <button
-              onClick={() => navigateToRecipes('veg')}
+              onClick={() => navigateTofoodType('veg')}
               className="recipe-button bg-green-500 text-white rounded-lg h-full w-full flex items-center justify-center shadow-lg relative"
             >
               <div className="icon" />
@@ -131,7 +139,7 @@ const Home = () => {
           </div>
           <div className="flex flex-col items-center w-1/2 h-35vh">
             <button
-              onClick={() => navigateToRecipes('non-veg')}
+              onClick={() => navigateTofoodType('non-veg')}
               className="recipe-button bg-red-500 text-white rounded-lg h-full w-full flex items-center justify-center shadow-lg relative"
             >
               <div className="icon" />
