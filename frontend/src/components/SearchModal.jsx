@@ -79,7 +79,7 @@ const SearchModal = ({ isOpen, onClose }) => {
 
         {/* Search Bar and Button */}
         <div className="flex mb-4 text-center">
-          <h1 className='text-center mt-5 text-2xl font-bold'>Search recipe by incredients..</h1>
+          <h1 className='text-center mt-5 text-2xl font-bold'>Search recipe by ingredients..</h1>
         </div>
 
         {/* Ingredients Section */}
@@ -96,7 +96,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                     <li key={index}>
                       <button
                         onClick={() => toggleIngredient(item)}
-                        className={`p-2 w-full text-left ${selectedIngredients.includes(item) ? 'bg-green-500 text-white' : 'bg-[transparent]'}  text-black rounded`}
+                        className={`p-2 w-full text-left ${selectedIngredients.includes(item) ? 'bg-green-500 text-white' : 'bg-transparent'} text-black rounded`}
                       >
                         {item}
                       </button>

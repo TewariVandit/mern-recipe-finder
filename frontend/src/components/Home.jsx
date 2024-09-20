@@ -84,7 +84,7 @@ const Home = () => {
             className="recipe-button fast-food"
           >
             <div className="icon" />
-            <span>Fast Food</span>
+            <span className='text-white'>Fast Food</span>
           </button>
         </div>
       </div>
