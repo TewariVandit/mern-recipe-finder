@@ -333,7 +333,7 @@ export const getAllRecipes = async (req, res) => {
 
 export const getAllOrFilteredRecipes = async (req, res) => {
     try {
-        const { foodType, recipeType, mealTime, cookingTime } = req.query;
+        const { foodType, recipeType, mealTime, cookingTime, spices, vegetables, oil, Meat, DairyProducts, Pulses, Others } = req.query;
 
         // Initialize an empty query object
         const query = {};
@@ -352,6 +352,38 @@ export const getAllOrFilteredRecipes = async (req, res) => {
             query.cookingTime = { $lte: Number(cookingTime) }; // Convert to number for comparison
         }
 
+        // Convert query parameters to arrays if they are provided as separate parameters
+        const spiceArray = Array.isArray(spices) ? spices : [spices].filter(Boolean);
+        const vegetableArray = Array.isArray(vegetables) ? vegetables : [vegetables].filter(Boolean);
+        const oilArray = Array.isArray(oil) ? oil : [oil].filter(Boolean);
+        const meatArray = Array.isArray(Meat) ? Meat : [Meat].filter(Boolean);
+        const dairyArray = Array.isArray(DairyProducts) ? DairyProducts : [DairyProducts].filter(Boolean);
+        const pulsesArray = Array.isArray(Pulses) ? Pulses : [Pulses].filter(Boolean);
+        const othersArray = Array.isArray(Others) ? Others : [Others].filter(Boolean);
+
+        // Add checks for new fields
+        if (spiceArray.length) {
+            query.spices = { $in: spiceArray };
+        }
+        if (vegetableArray.length) {
+            query.vegetables = { $in: vegetableArray };
+        }
+        if (oilArray.length) {
+            query.oil = { $in: oilArray };
+        }
+        if (meatArray.length) {
+            query.Meat = { $in: meatArray };
+        }
+        if (dairyArray.length) {
+            query.DairyProducts = { $in: dairyArray };
+        }
+        if (pulsesArray.length) {
+            query.Pulses = { $in: pulsesArray };
+        }
+        if (othersArray.length) {
+            query.Others = { $in: othersArray };
+        }
+
         // Fetch recipes based on the query, sorted by creation date descending
         const recipes = await Recipe.find(Object.keys(query).length ? query : {}).sort({ createdAt: -1 });
 
@@ -362,3 +394,4 @@ export const getAllOrFilteredRecipes = async (req, res) => {
         return res.status(500).json({ message: 'Server error' });
     }
 };
+

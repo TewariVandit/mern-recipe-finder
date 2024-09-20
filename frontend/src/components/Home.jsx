@@ -63,21 +63,21 @@ const Home = () => {
             className="recipe-button vegetable"
           >
             <div className="icon" />
-            <span>Vegetable</span>
+            <span className='text-white'>Vegetable</span>
           </button>
           <button
             onClick={() => navigateToRecipes('chapati')}
             className="recipe-button chapati"
           >
             <div className="icon" />
-            <span>Chapati</span>
+            <span className='text-white'>Chapati</span>
           </button>
           <button
             onClick={() => navigateToRecipes('sweet')}
             className="recipe-button sweet"
           >
             <div className="icon" />
-            <span>Sweet</span>
+            <span className='text-white'>Sweet</span>
           </button>
           <button
             onClick={() => navigateToRecipes('fast food')}
