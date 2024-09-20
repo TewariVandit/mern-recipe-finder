@@ -113,7 +113,7 @@ const Navbar = ({ isAuthenticated }) => {
 
       {/* Search Icon Button */}
       <button
-        className="fixed bottom-4 right-4 bg-green-600 text-white p-5 rounded-full text-xl"
+        className="fixed bottom-4 right-4 bg-green-600 text-white p-5 rounded-full text-xl z-50"
         onClick={() => setSearchModalOpen(true)}
       >
         🔍

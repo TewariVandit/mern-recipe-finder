@@ -6,19 +6,26 @@ const SearchModal = ({ isOpen, onClose }) => {
   const [ingredients, setIngredients] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [selectedIngredients, setSelectedIngredients] = useState([]);
+  const [selectedIngredients, setSelectedIngredients] = useState({
+    spices: [],
+    vegetables: [],
+    oil: [],
+    meat: [],
+    dairyProducts: [],
+    pulses: [],
+    others: [],
+  });
   const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0); // Track current category index
-  
+
   const navigate = useNavigate();
 
   // Fetch ingredients from the API
   const fetchIngredients = async () => {
     try {
       const response = await axios.get('https://mern-recipe-finder.onrender.com/api/v1/recipe/ingredients');
-      // Filter out empty values from the response
       const filteredData = {};
       for (const key in response.data) {
-        const nonEmptyValues = response.data[key].filter(item => item.trim() !== ''); // Filter out empty strings
+        const nonEmptyValues = response.data[key].filter(item => item.trim() !== '');
         if (nonEmptyValues.length > 0) {
           filteredData[key] = nonEmptyValues;
         }
@@ -37,17 +44,30 @@ const SearchModal = ({ isOpen, onClose }) => {
     }
   }, [isOpen]);
 
-  const toggleIngredient = (ingredient) => {
-    setSelectedIngredients((prev) => 
-      prev.includes(ingredient) 
-        ? prev.filter((item) => item !== ingredient) 
-        : [...prev, ingredient]
-    );
+  const toggleIngredient = (ingredient, category) => {
+    setSelectedIngredients((prev) => {
+      
+      const currentSelection = prev[category] || [];
+      return {
+        ...prev,
+        [category]: currentSelection.includes(ingredient)
+        ? currentSelection.filter(item => item !== ingredient)
+        : [...currentSelection, ingredient]
+      };
+    });
   };
 
   const navigateToRecipes = () => {
-    navigate('/recipes', { state: { selectedIngredients } });
-    setSelectedIngredients([]); // Reset selected ingredients
+    navigate('/recipes', { state: { filter: selectedIngredients } });
+    setSelectedIngredients({
+      spices: [],
+      vegetables: [],
+      oil: [],
+      meat: [],
+      dairyProducts: [],
+      pulses: [],
+      others: [],
+    }); // Reset selected ingredients
     setCurrentCategoryIndex(0); // Reset to first category
     onClose(); // Close the modal after navigating
   };
@@ -83,11 +103,11 @@ const SearchModal = ({ isOpen, onClose }) => {
                 <h3 className="text-lg font-bold mt-4">{categories[currentCategoryIndex].charAt(0).toUpperCase() + categories[currentCategoryIndex].slice(1)}</h3>
                 <ul className="space-y-2">
                   {ingredients[categories[currentCategoryIndex]].map((item, index) => (
-                    item.trim() !== '' && ( // Only show non-empty items
+                    item.trim() !== '' && (
                       <li key={index}>
                         <button
-                          onClick={() => toggleIngredient(item)}
-                          className={`p-2 w-full text-left ${selectedIngredients.includes(item) ? 'bg-green-500 text-white' : 'bg-transparent'} text-black rounded`}
+                          onClick={() => toggleIngredient(item, categories[currentCategoryIndex])}
+                          className={`p-2 w-full text-left ${selectedIngredients[categories[currentCategoryIndex]].includes(item) ? 'bg-green-500 text-white' : 'bg-transparent'} text-black rounded`}
                         >
                           {item}
                         </button>
